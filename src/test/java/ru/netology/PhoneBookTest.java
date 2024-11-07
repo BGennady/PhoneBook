@@ -53,4 +53,10 @@ public class PhoneBookTest {
         assertEquals("Иван Иваныч", phoneBook.findByNumber("+79107775536"));
         assertEquals("Мария Смирнова", phoneBook.findByNumber("+79107775534"));
     }
+
+    @Test
+    void findByNameTest(){
+        assertEquals("Анна Петрова", phoneBook.findByName("+79107775537"));
+    }
+
 }
