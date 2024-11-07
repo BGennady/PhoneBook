@@ -1,9 +1,9 @@
 package ru.netology;
 
 
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -20,13 +20,17 @@ public class PhoneBookTest {
         testMap = new HashMap<>();
         phoneBook = new PhoneBook(testMap);
 
-
         // завожу пачку контактов
         phoneBook.add("Иван Иваныч", "+79107775533");
         phoneBook.add("Мария Смирнова", "+79107775534");
         phoneBook.add("Алексей Иванов", "+79107775535");
         phoneBook.add("Иван Иваныч", "+79107775536");
         phoneBook.add("Анна Петрова", "+79107775537");
+    }
+
+    @AfterEach
+    void tearDown() {
+        phoneBook = null;
     }
 
     @Test
