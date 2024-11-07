@@ -17,8 +17,8 @@ public class PhoneBookTest {
 
     @BeforeEach
     void setUp() {
-        testMap = new HashMap<>(); // мокирую мапу
-        phoneBook = new PhoneBook(testMap); // передаю заглушку в класс PhoneBook
+        testMap = new HashMap<>();
+        phoneBook = new PhoneBook(testMap);
 
 
         // завожу пачку контактов
@@ -44,5 +44,9 @@ public class PhoneBookTest {
         // сравниваю ожидаемое с полученым
         assertEquals(4, uniqueNamesCount);
     }
-
+    @Test
+    void findByNumberTest(){
+        assertEquals("Иван Иваныч", phoneBook.findByNumber("+79107775536"));
+        assertEquals("Мария Смирнова", phoneBook.findByNumber("+79107775534"));
+    }
 }
