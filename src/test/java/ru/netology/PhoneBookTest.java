@@ -56,7 +56,7 @@ public class PhoneBookTest {
 
     @Test
     void findByNameTest(){
-        assertEquals("Анна Петрова", phoneBook.findByName("+79107775537"));
+        assertEquals("+79107775537", phoneBook.findByName("Анна Петрова"));
     }
 
 }

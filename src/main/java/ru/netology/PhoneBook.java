@@ -29,8 +29,8 @@ public class PhoneBook {
         return reverseContacts.get(phoneNumber);
     }
 
-    public String findByName(){
-     return null;
+    public String findByName(String name){
+     return contacts.get(name);
     }
 }
 
