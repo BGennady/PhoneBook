@@ -1,13 +1,19 @@
 package ru.netology;
 
 
-public class PhoneBook {
+import java.util.HashMap;
+import java.util.Map;
 
-    public static void main(String[] args) {
+public class PhoneBook {
+    private Map<String, String> contacts = new HashMap<>();
+
+    public PhoneBook(Map<String, String> contacts) {
+        this.contacts = contacts;
     }
 
-    public int add() {
-        return 0;
+    public int add(String name, String number) {
+        contacts.put(name, number);
+        return contacts.size();
     }
 }
 

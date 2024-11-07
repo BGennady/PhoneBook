@@ -13,12 +13,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PhoneBookTest {
     PhoneBook phoneBook;
-    Map<String, String> mockMap;
+    Map<String, String> testMap;
 
     @BeforeEach
     void setUp() {
-        mockMap = Mockito.mock(HashMap.class); // мокирую мапу
-        phoneBook = new PhoneBook(mockMap); // передаю заглушку в класс PhoneBook
+        testMap = new HashMap<>(); // мокирую мапу
+        phoneBook = new PhoneBook(testMap); // передаю заглушку в класс PhoneBook
+
 
         // завожу пачку контактов
         phoneBook.add("Иван Иваныч", "+79107775533");
@@ -30,13 +31,13 @@ public class PhoneBookTest {
 
     @Test
     void addTestNumberOfContacts() {
-        assertEquals(4, mockMap.size());
+        assertEquals(5, phoneBook.add("Новый Контакт", "+79107775538"));
     }
 
     @Test
     void addTestListOfNames(){
         // получаю все имена (ключи) из mockMap
-        var listNames = mockMap.keySet();
+        var listNames = testMap.keySet();
         // получаю колличество униальных
         long uniqueNamesCount = listNames.stream().distinct().count();
 
