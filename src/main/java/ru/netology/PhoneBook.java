@@ -32,8 +32,9 @@ public class PhoneBook {
     public String findByName(String name){
      return contacts.get(name);
     }
-    public void printAllNames(){
-        System.out.println();
+   public void printAllNames(){
+        for (String name : contacts.keySet())
+        System.out.println(name);
     }
 }
 
